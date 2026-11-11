@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 body{
     background-color: rgb(189, 185, 182);
     min-height: 100vh;
@@ -21,8 +27,8 @@ button{
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.btn-active:hover,
-.btn-active{
+.btn:hover,
+.btn.active{
   background-color: #007bff;
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
@@ -30,7 +36,7 @@ button{
 .Gallery{
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -43,6 +49,9 @@ button{
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
   transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card[hidden] {
+  display: none;
 }
 .card:hover {
   transform: translateY(-5px);
@@ -91,4 +100,8 @@ button{
 .description{
 font-size: 0.95rem;
 line-height: 1.4;
+}
+@media (max-width: 576px) {
+  body { padding: 1rem; }
+  .Gallery { grid-template-columns: 1fr; }
 }

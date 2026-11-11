@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Photo Gallery</title>
 <link rel="stylesheet" href="style.css">
      
 </head>
 <body>
     <h1>Gallery</h1>
         <div class="myBtncontainer">
-             <button class="btn-active" onclick="filterSelection('all')"> Show all</button>
-             <button class="btn" onclick="filterSelection('Landscapes')"> Landscapes</button>
-              <button class="btn" onclick="filterSelection('Portraits')"> Portraits</button>
-               <button class="btn" onclick="filterSelection('Architecture')"> Architecture</button>
+             <button class="btn active" type="button" onclick="filterSelection('all', this)">Show all</button>
+             <button class="btn" type="button" onclick="filterSelection('Landscapes', this)">Landscapes</button>
+              <button class="btn" type="button" onclick="filterSelection('Portraits', this)">Portraits</button>
+               <button class="btn" type="button" onclick="filterSelection('Architecture', this)">Architecture</button>
   
         </div>
 <div class="Gallery">
     <div class="card Landscapes">
-        <img src="images/img (1).jpg" alt="Mountains">
+        <img src="images/img.jpg" alt="Mountains">
         <div class="card-content">
             <span class="category">Landscapes</span>
             <h4 class="card-title">pretty cool place</h4>
-            <p class="description"> woooow</p>
+           
         </div>
         <div class="overlay">
+           <p class="description"> beautiful cow and land</p>
         </div>
     </div>
       <div class="card Landscapes">
@@ -32,9 +33,10 @@
         <div class="card-content">
             <span class="category">Landscapes</span>
             <h4 class="card-title">pretty cool place</h4>
-            <p class="description"> woooow</p>
+           
         </div>
         <div class="overlay">
+        <p class="description"> Green</p>
         </div>
     </div>
   <div class="card Landscapes">
@@ -42,9 +44,10 @@
         <div class="card-content">
             <span class="category">Landscapes</span>
             <h4 class="card-title">pretty cool place</h4>
-            <p class="description"> woooow</p>
+           
         </div>
         <div class="overlay">
+        <p class="description"> that looks dope spot to swim in</p>
         </div>
     </div>
       <div class="card Landscapes">
@@ -52,9 +55,10 @@
         <div class="card-content">
             <span class="category">Landscapes</span>
             <h4 class="card-title">pretty cool place</h4>
-            <p class="description"> woooow</p>
+            
         </div>
         <div class="overlay">
+        <p class="description"> basic</p>
         </div>
     </div>
       <div class="card Portraits">
@@ -62,64 +66,63 @@
         <div class="card-content">
             <span class="category">Portraits</span>
             <h4 class="card-title">pretty cool Pose</h4>
-            <p class="description"> woooow</p>
+            
         </div>
         <div class="overlay">
+        <p class="description"> iconic </p>
         </div>
     </div>
-      </div>
       <div class="card Portraits">
         <img src="images/por (2).jpg" alt="Studio photos">
         <div class="card-content">
             <span class="category">Portraits</span>
             <h4 class="card-title">pretty cool Pose</h4>
-            <p class="description"> woooow</p>
+            
         </div>
         <div class="overlay">
+        <p class="description"> 1 of 1</p>
         </div>
     </div>
-      </div>
       <div class="card Portraits">
         <img src="images/por (3).jpg" alt="Studio photos">
         <div class="card-content">
             <span class="category">Portraits</span>
             <h4 class="card-title">pretty cool Pose</h4>
-            <p class="description"> woooow</p>
+           
         </div>
         <div class="overlay">
+        <p class="description"> does he know? </p>
         </div>
     </div>
-      </div>
       <div class="card Portraits">
         <img src="images/por (4).jpg" alt="Studio photos">
         <div class="card-content">
             <span class="category">Portraits</span>
             <h4 class="card-title">pretty cool Pose</h4>
-            <p class="description"> woooow</p>
+            
         </div>
         <div class="overlay">
+        <p class="description"> kevin</p>
         </div>
     </div>
-      </div>
       <div class="card Portraits">
         <img src="images/por (5).jpg" alt="Studio photos">
         <div class="card-content">
             <span class="category">Portraits</span>
             <h4 class="card-title">pretty cool Pose</h4>
-            <p class="description"> woooow</p>
         </div>
         <div class="overlay">
+          <p class="description"> quiet</p>
         </div>
     </div>
-      </div>
       <div class="card Architecture">
         <img src="images/arc.jpg" alt="Study photos">
         <div class="card-content">
             <span class="category">Architecture</span>
             <h4 class="card-title">pretty cool design</h4>
-            <p class="description"> woooow</p>
         </div>
         <div class="overlay">
+          <p class="description"> love this design</p>
         </div>
     </div>
       <div class="card Architecture">
@@ -127,9 +130,9 @@
         <div class="card-content">
             <span class="category">Architecture</span>
             <h4 class="card-title">pretty cool design</h4>
-            <p class="description"> woooow</p>
         </div>
         <div class="overlay">
+          <p class="description"> they dont make em like these anymore</p>
         </div>
     </div>
       <div class="card Architecture">
@@ -137,33 +140,23 @@
         <div class="card-content">
             <span class="category">Architecture</span>
             <h4 class="card-title">pretty cool design</h4>
-            <p class="description"> woooow</p>
         </div>
         <div class="overlay">
+          <p class="description"> cool</p>
         </div>
     </div>
 </div>
 <script>
-    function filterSelection(category) {
+    function filterSelection(category, selectedButton) {
       const cards = document.querySelectorAll('.card');
       const buttons = document.querySelectorAll('.btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+      buttons.forEach(btn => btn.classList.toggle('active', btn === selectedButton));
 
       cards.forEach(card => {
-        if (category === 'all' || card.classList.contains(category)) {
-          card.style.display = 'grid';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'scale(1)';
-          }, 10);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'scale(0.8)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 300);
-        }
+        const visible = category === 'all' || card.classList.contains(category);
+        card.hidden = !visible;
+        card.style.opacity = visible ? '1' : '0';
+        card.style.transform = visible ? 'scale(1)' : 'scale(0.8)';
       });
     }
 </script>
