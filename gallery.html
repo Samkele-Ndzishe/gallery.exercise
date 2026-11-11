@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="style.css">
+     
+</head>
+<body>
+    <h1>Gallery</h1>
+        <div class="myBtncontainer">
+             <button class="btn-active" onclick="filterSelection('all')"> Show all</button>
+             <button class="btn" onclick="filterSelection('Landscapes')"> Landscapes</button>
+              <button class="btn" onclick="filterSelection('Portraits')"> Portraits</button>
+               <button class="btn" onclick="filterSelection('Architecture')"> Architecture</button>
+  
+        </div>
+<div class="Gallery">
+    <div class="card Landscapes">
+        <img src="images/img (1).jpg" alt="Mountains">
+        <div class="card-content">
+            <span class="category">Landscapes</span>
+            <h4 class="card-title">pretty cool place</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+      <div class="card Landscapes">
+        <img src="images/img (3).jpg" alt="Mountains">
+        <div class="card-content">
+            <span class="category">Landscapes</span>
+            <h4 class="card-title">pretty cool place</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+  <div class="card Landscapes">
+        <img src="images/img (4).jpg" alt="Mountains">
+        <div class="card-content">
+            <span class="category">Landscapes</span>
+            <h4 class="card-title">pretty cool place</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+      <div class="card Landscapes">
+        <img src="images/img (5).jpg" alt="Mountains">
+        <div class="card-content">
+            <span class="category">Landscapes</span>
+            <h4 class="card-title">pretty cool place</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+      <div class="card Portraits">
+        <img src="images/por.jpg" alt="Studio photos">
+        <div class="card-content">
+            <span class="category">Portraits</span>
+            <h4 class="card-title">pretty cool Pose</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+      </div>
+      <div class="card Portraits">
+        <img src="images/por (2).jpg" alt="Studio photos">
+        <div class="card-content">
+            <span class="category">Portraits</span>
+            <h4 class="card-title">pretty cool Pose</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+      </div>
+      <div class="card Portraits">
+        <img src="images/por (3).jpg" alt="Studio photos">
+        <div class="card-content">
+            <span class="category">Portraits</span>
+            <h4 class="card-title">pretty cool Pose</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+      </div>
+      <div class="card Portraits">
+        <img src="images/por (4).jpg" alt="Studio photos">
+        <div class="card-content">
+            <span class="category">Portraits</span>
+            <h4 class="card-title">pretty cool Pose</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+      </div>
+      <div class="card Portraits">
+        <img src="images/por (5).jpg" alt="Studio photos">
+        <div class="card-content">
+            <span class="category">Portraits</span>
+            <h4 class="card-title">pretty cool Pose</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+      </div>
+      <div class="card Architecture">
+        <img src="images/arc.jpg" alt="Study photos">
+        <div class="card-content">
+            <span class="category">Architecture</span>
+            <h4 class="card-title">pretty cool design</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+      <div class="card Architecture">
+        <img src="images/arc (2).jpg" alt="Study photos">
+        <div class="card-content">
+            <span class="category">Architecture</span>
+            <h4 class="card-title">pretty cool design</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+      <div class="card Architecture">
+        <img src="images/arc (3).jpg" alt="Study photos">
+        <div class="card-content">
+            <span class="category">Architecture</span>
+            <h4 class="card-title">pretty cool design</h4>
+            <p class="description"> woooow</p>
+        </div>
+        <div class="overlay">
+        </div>
+    </div>
+</div>
+<script>
+    function filterSelection(category) {
+      const cards = document.querySelectorAll('.card');
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'grid';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 10);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.8)';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 300);
+        }
+      });
+    }
+</script>
+</body>
+</html>

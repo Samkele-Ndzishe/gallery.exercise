@@ -1,0 +1,94 @@
+body{
+    background-color: rgb(189, 185, 182);
+    min-height: 100vh;
+    padding: 2rem;
+}
+.myBtncontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+button{
+    padding: 0.6rem 1.4rem;
+  border: 2px solid #007bff;
+  background-color: transparent;
+  color: #007bff;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-active:hover,
+.btn-active{
+  background-color: #007bff;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+.Gallery{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.card {
+  display: grid;
+  grid-template-rows: 200px auto;
+  position: relative;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+.card img {
+  width: 100%;
+  height: 210px;
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+}
+.card-content {
+  padding: 15px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.category {
+ font-size: 20px;
+ font-weight: 500;
+ color:  #212529;
+}
+.card-title {
+  font-size: 1.1rem;
+  color: #212529;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.card:hover .overlay {
+  opacity: 1;
+}
+.description{
+font-size: 0.95rem;
+line-height: 1.4;
+}
